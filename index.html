@@ -5,48 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Open Source Mould Management | Damp &amp; Mould Compliance, Fully Documented</title>
 <meta name="description" content="Open Source Mould Management is the transparent damp &amp; mould compliance partner for social housing. We publish our exact treatment protocol and the HSE-approved chemicals we use — survey to sign-off, fully documented for Awaab's Law.">
-<meta name="theme-color" content="#0b0d10">
+<meta name="theme-color" content="#163756">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Open Source Mould Management — Damp &amp; Mould Compliance, Fully Documented">
 <meta property="og:description" content="The transparent damp &amp; mould partner for social housing. Every chemical named, every step documented, every job auditable. Built for Awaab's Law.">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Zorian/zentox@main/images/image_05.jpeg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Zorian/zentox@main/assets/logo.png">
 <meta name="twitter:card" content="summary_large_image">
-<!-- Favicon: open circle + check = open + verified -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0d10'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23f59e0b' stroke-width='2.5'/%3E%3Cpath d='M12 16.5l2.8 2.8L21 13' fill='none' stroke='%23f59e0b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<!-- Favicon: brand shield + magnifier -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3 L27 7 V15 C27 23 21 27 16 29 C11 27 5 23 5 15 V7 Z' fill='%233a7a2e' stroke='%23163756' stroke-width='1.5'/%3E%3Ccircle cx='14' cy='14' r='4.3' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cline x1='17' y1='17' x2='21' y2='21' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0b0d10;
-    --panel: #14171c;
-    --card: #181c22;
-    --card-hover: #1e232b;
-    --line: #262b33;
-    --navy: #0c1828;
-    --amber: #f59e0b;
-    --amber-light: #fbbf24;
-    --hazard: #e5484d;
-    --verified: #34d399;
-    --paper: #f5f5f0;
-    --mute: #858e9c;
-    --soft: #c5cdd9;
+    --bg: #f6f7f3;
+    --surface: #ffffff;
+    --alt: #eef1ea;
+    --ink: #18222b;
+    --navy: #163756;
+    --navy-deep: #0f2840;
+    --green: #3a7a2e;
+    --green-deep: #2c5a26;
+    --green-bright: #6fbf46;
+    --green-soft: #e9f3e3;
+    --line: #e1e5db;
+    --line-dark: #234058;
+    --mute: #5f6b76;
+    --soft: #41505c;
+    --hazard: #cf4b3e;
+    --hazard-bright: #ff6f63;
+    --light: #d7deea;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
     font-family: 'Barlow', sans-serif;
-    background: var(--panel);
-    color: var(--paper);
+    background: var(--bg);
+    color: var(--ink);
     overflow-x: hidden;
   }
 
-  ::selection { background: var(--amber); color: var(--ink); }
-
+  ::selection { background: var(--green); color: #fff; }
   .mono { font-family: 'IBM Plex Mono', monospace; }
 
   /* ── NAV ── */
@@ -58,49 +60,31 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
-    height: 66px;
-    background: rgba(11,13,16,0.94);
+    height: 70px;
+    background: rgba(255,255,255,0.92);
     border-bottom: 1px solid var(--line);
     backdrop-filter: blur(10px);
   }
 
-  .brand {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    text-decoration: none;
-  }
-
-  .brand-mark {
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand img { height: 40px; width: auto; display: block; }
+  .brand-text { display: flex; flex-direction: column; line-height: 1; }
+  .brand-name {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 1.5rem;
-    letter-spacing: 0.04em;
-    color: var(--paper);
+    font-weight: 800;
+    font-size: 1.32rem;
+    letter-spacing: 0.01em;
     text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    line-height: 1;
   }
-
-  .brand-mark::before {
-    content: '';
-    width: 13px;
-    height: 13px;
-    border: 2.5px solid var(--amber);
-    border-radius: 50%;
-    display: inline-block;
-  }
-
-  .brand-mark span { color: var(--amber); }
-
-  .brand-sub {
+  .brand-name .o { color: var(--green); }
+  .brand-name .s { color: var(--navy); }
+  .brand-tag {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
+    font-size: 0.58rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--mute);
+    margin-top: 3px;
   }
 
   .nav-links {
@@ -110,37 +94,35 @@
     margin-left: auto;
     margin-right: 30px;
   }
-
   .nav-links a {
-    color: var(--mute);
+    color: var(--soft);
     text-decoration: none;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
-    letter-spacing: 0.04em;
+    font-size: 0.76rem;
+    letter-spacing: 0.03em;
     transition: color 0.2s;
   }
-
-  .nav-links a:hover { color: var(--paper); }
+  .nav-links a:hover { color: var(--green); }
 
   a.cta-nav {
-    background: var(--amber);
-    color: var(--ink);
+    background: var(--green);
+    color: #fff;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.06em;
+    font-size: 0.92rem;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     padding: 11px 22px;
     text-decoration: none;
     transition: background 0.2s, transform 0.2s;
   }
-
-  a.cta-nav:hover { background: var(--amber-light); transform: translateY(-1px); }
+  a.cta-nav:hover { background: var(--green-deep); transform: translateY(-1px); }
 
   /* ── AWAAB BANNER ── */
   .awaab-banner {
-    margin-top: 66px;
+    margin-top: 70px;
     background: var(--hazard);
+    color: #fff;
     padding: 13px 40px;
     display: flex;
     align-items: center;
@@ -148,37 +130,35 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 600;
     font-size: 0.95rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
   }
-
   .awaab-banner .pill {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
-    background: rgba(0,0,0,0.28);
+    background: rgba(0,0,0,0.18);
     padding: 4px 11px;
     font-size: 0.68rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     white-space: nowrap;
   }
 
   /* ── HERO ── */
   .hero {
-    min-height: 86vh;
+    min-height: 84vh;
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
-    padding: 76px 40px 76px 80px;
+    padding: 70px 40px 70px 80px;
     gap: 56px;
     position: relative;
     overflow: hidden;
   }
-
   .hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 75% 45%, rgba(245,158,11,0.07) 0%, transparent 58%);
+    background: radial-gradient(ellipse at 75% 40%, rgba(58,122,46,0.08) 0%, transparent 58%);
     pointer-events: none;
   }
 
@@ -186,21 +166,15 @@
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 500;
     font-size: 0.74rem;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 26px;
+    color: var(--green);
+    margin-bottom: 24px;
     display: flex;
     align-items: center;
     gap: 12px;
   }
-
-  .hero-label::before {
-    content: '';
-    width: 30px;
-    height: 2px;
-    background: var(--amber);
-  }
+  .hero-label::before { content: ''; width: 30px; height: 2px; background: var(--green); }
 
   h1 {
     font-family: 'Barlow Condensed', sans-serif;
@@ -209,14 +183,10 @@
     line-height: 0.94;
     text-transform: uppercase;
     letter-spacing: -0.01em;
-    margin-bottom: 28px;
+    color: var(--navy);
+    margin-bottom: 26px;
   }
-
-  h1 em {
-    font-style: normal;
-    color: var(--amber);
-    display: block;
-  }
+  h1 em { font-style: normal; color: var(--green); display: block; }
 
   .hero-sub {
     font-size: 1.08rem;
@@ -224,25 +194,19 @@
     line-height: 1.7;
     color: var(--soft);
     max-width: 470px;
-    margin-bottom: 36px;
+    margin-bottom: 34px;
   }
+  .hero-sub strong { color: var(--ink); font-weight: 600; }
 
-  .hero-sub strong { color: var(--paper); font-weight: 500; }
-
-  .hero-ctas {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 
   .btn-primary {
-    background: var(--amber);
-    color: var(--ink);
+    background: var(--green);
+    color: #fff;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
     font-size: 1rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     padding: 16px 34px;
     text-decoration: none;
@@ -251,78 +215,63 @@
     border: none;
     cursor: pointer;
   }
-
-  .btn-primary:hover { background: var(--amber-light); transform: translateY(-2px); }
+  .btn-primary:hover { background: var(--green-deep); transform: translateY(-2px); }
 
   .btn-ghost {
-    border: 1px solid var(--line);
-    color: var(--soft);
+    border: 1px solid var(--navy);
+    color: var(--navy);
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     padding: 16px 34px;
     text-decoration: none;
     transition: all 0.2s;
     display: inline-block;
   }
-
-  .btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
+  .btn-ghost:hover { background: var(--navy); color: #fff; }
 
   .hero-stats {
     display: flex;
     gap: 36px;
-    margin-top: 44px;
-    padding-top: 36px;
+    margin-top: 42px;
+    padding-top: 34px;
     border-top: 1px solid var(--line);
   }
-
   .stat-item .num {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
     font-size: 2.1rem;
-    color: var(--amber);
+    color: var(--green);
     line-height: 1;
   }
-
   .stat-item .label {
     font-size: 0.78rem;
     color: var(--mute);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     margin-top: 6px;
     max-width: 130px;
   }
 
-  /* ── HERO IMAGE ── */
-  .hero-visual { position: relative; }
-
-  .hero-img-wrap {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--line);
-  }
-
-  .hero-img-wrap img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.88);
-  }
-
-  .hero-img-label {
+  /* ── HERO LOGO ── */
+  .hero-visual { display: flex; align-items: center; justify-content: center; position: relative; }
+  .hero-visual::after {
+    content: '';
     position: absolute;
-    bottom: 14px;
-    left: 14px;
-    background: var(--hazard);
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 600;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 6px 12px;
+    width: 70%; height: 70%;
+    background: radial-gradient(circle, rgba(58,122,46,0.10), transparent 70%);
+    z-index: 0;
+  }
+  .hero-visual img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 18px 40px rgba(22,55,86,0.14));
   }
 
   /* ── SHARED SECTION HEADERS ── */
@@ -330,12 +279,11 @@
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 500;
     font-size: 0.74rem;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--green);
     margin-bottom: 14px;
   }
-
   .section-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
@@ -343,172 +291,135 @@
     text-transform: uppercase;
     letter-spacing: -0.01em;
     line-height: 1.02;
+    color: var(--navy);
     margin-bottom: 14px;
   }
+  .section-sub { color: var(--mute); font-size: 1rem; max-width: 580px; line-height: 1.65; }
 
-  .section-sub {
-    color: var(--mute);
-    font-size: 1rem;
-    max-width: 580px;
-    line-height: 1.65;
-  }
-
-  /* ── COMPLIANCE DEADLINES ── */
+  /* ── COMPLIANCE DEADLINES (dark band) ── */
   .compliance-section {
-    background: var(--navy);
-    padding: 80px;
-    border-top: 3px solid var(--amber);
+    background: var(--navy-deep);
+    padding: 84px 80px;
+    border-top: 3px solid var(--green);
   }
+  .compliance-section .section-label { color: var(--green-bright); }
+  .compliance-section .section-title { color: #fff; }
+  .compliance-section .section-sub { color: var(--light); }
 
   .deadlines-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    background: var(--line);
+    gap: 1px;
+    background: var(--line-dark);
     margin-top: 44px;
+    border: 1px solid var(--line-dark);
   }
-
-  .deadline-card {
-    background: var(--card);
-    padding: 34px 26px;
-    transition: background 0.2s;
-  }
-
-  .deadline-card:hover { background: var(--card-hover); }
-
+  .deadline-card { background: #142f48; padding: 34px 26px; transition: background 0.2s; }
+  .deadline-card:hover { background: #18374f; }
   .deadline-time {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
     font-size: 3rem;
-    color: var(--amber);
+    color: var(--green-bright);
     line-height: 1;
   }
-
   .deadline-unit {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 500;
     font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: var(--mute);
+    color: var(--light);
     margin: 6px 0 16px;
   }
-
-  .deadline-desc {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: var(--soft);
-  }
-
-  .deadline-emergency { border-top: 3px solid var(--hazard); }
-  .deadline-emergency .deadline-time { color: var(--hazard); }
+  .deadline-desc { font-size: 0.9rem; line-height: 1.5; color: #aeb9c8; }
+  .deadline-emergency { border-top: 3px solid var(--hazard-bright); }
+  .deadline-emergency .deadline-time { color: var(--hazard-bright); }
 
   /* ── THE PROTOCOL (signature) ── */
-  .protocol-section {
-    padding: 100px 80px;
-    position: relative;
-  }
-
+  .protocol-section { padding: 100px 80px; }
   .protocol-head {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     gap: 40px;
     flex-wrap: wrap;
-    margin-bottom: 52px;
+    margin-bottom: 50px;
   }
-
   .protocol-open-tag {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.72rem;
     color: var(--mute);
     border: 1px solid var(--line);
-    padding: 10px 16px;
-    line-height: 1.5;
+    background: var(--surface);
+    padding: 12px 16px;
+    line-height: 1.6;
     white-space: nowrap;
   }
+  .protocol-open-tag b { color: var(--green); font-weight: 600; }
 
-  .protocol-open-tag b { color: var(--verified); font-weight: 600; }
-
-  .steps {
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid var(--line);
-  }
-
+  .steps { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
   .step {
     display: grid;
-    grid-template-columns: 130px 1fr 300px;
+    grid-template-columns: 120px 1fr 300px;
     gap: 32px;
     padding: 32px 0;
     border-bottom: 1px solid var(--line);
     align-items: start;
     transition: background 0.2s;
   }
-
-  .step:hover { background: rgba(255,255,255,0.015); }
-
+  .step:hover { background: rgba(58,122,46,0.03); }
   .step-index {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--amber);
-    letter-spacing: 0.06em;
+    font-size: 0.76rem;
+    color: var(--green);
+    letter-spacing: 0.05em;
     padding-top: 4px;
   }
-
   .step-index .big {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
     font-size: 2.6rem;
-    color: var(--paper);
+    color: var(--navy);
     display: block;
     line-height: 0.9;
     margin-top: 6px;
   }
-
   .step-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.02em;
+    color: var(--navy);
     margin-bottom: 10px;
   }
-
-  .step-desc {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--soft);
-    max-width: 540px;
-  }
-
-  .step-desc em { font-style: normal; color: var(--amber); }
-
+  .step-desc { font-size: 0.95rem; line-height: 1.6; color: var(--soft); max-width: 540px; }
+  .step-desc em { font-style: normal; color: var(--green); font-weight: 500; }
   .step-spec {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.74rem;
+    font-size: 0.73rem;
     line-height: 1.7;
     color: var(--mute);
-    background: var(--card);
-    border-left: 2px solid var(--amber);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--green);
     padding: 14px 16px;
   }
-
-  .step-spec .k { color: var(--amber); }
+  .step-spec .k { color: var(--green); }
   .step-spec .v { color: var(--soft); }
 
-  .step.final { background: rgba(52,211,153,0.04); }
-  .step.final .step-index .big { color: var(--verified); }
-  .step.final .step-spec { border-left-color: var(--verified); }
-  .step.final .step-spec .k { color: var(--verified); }
+  .step.final { background: var(--green-soft); }
+  .step.final .step-index .big { color: var(--green-deep); }
+  .step.final .step-spec { border-left-color: var(--green-deep); }
   .step.final .step-title::after {
     content: 'PREVENTS REGROWTH';
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.6rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--ink);
-    background: var(--verified);
+    letter-spacing: 0.08em;
+    color: #fff;
+    background: var(--green);
     padding: 3px 8px;
     margin-left: 12px;
     vertical-align: middle;
@@ -517,99 +428,74 @@
 
   /* ── CHEMICAL DISCLOSURE ── */
   .chem-section { padding: 0 80px 100px; }
-
   .chem-panel {
-    background: var(--card);
+    background: var(--surface);
     border: 1px solid var(--line);
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-
-  .chem-intro {
-    padding: 48px 44px;
-    border-right: 1px solid var(--line);
-  }
-
+  .chem-intro { padding: 48px 44px; border-right: 1px solid var(--line); }
   .chem-intro h3 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
     font-size: 1.9rem;
     text-transform: uppercase;
     line-height: 1.05;
+    color: var(--navy);
     margin-bottom: 16px;
   }
-
-  .chem-intro p {
-    font-size: 0.95rem;
-    line-height: 1.65;
-    color: var(--soft);
-    margin-bottom: 14px;
-  }
-
+  .chem-intro p { font-size: 0.95rem; line-height: 1.65; color: var(--soft); margin-bottom: 14px; }
   .chem-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.7rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: var(--verified);
-    border: 1px solid rgba(52,211,153,0.4);
+    color: var(--green-deep);
+    background: var(--green-soft);
+    border: 1px solid rgba(58,122,46,0.3);
     padding: 7px 12px;
     margin-top: 8px;
   }
-
-  .chem-list { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
-
-  .chem-item { padding: 20px 22px; background: var(--panel); border: 1px solid var(--line); }
-
+  .chem-list { padding: 16px; display: flex; flex-direction: column; gap: 16px; background: var(--alt); }
+  .chem-item { padding: 20px 22px; background: var(--surface); border: 1px solid var(--line); }
   .chem-item .stage {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.66rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--green);
     margin-bottom: 8px;
   }
-
   .chem-item .compound {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 0.02em;
+    color: var(--navy);
     margin-bottom: 6px;
   }
-
   .chem-item .note { font-size: 0.86rem; color: var(--mute); line-height: 1.55; }
 
-  /* ── GALLERY ── */
-  .gallery-section {
-    padding: 100px 80px;
-    background: var(--ink);
-  }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3px;
-    margin-top: 44px;
-  }
-
+  /* ── GALLERY (dark band) ── */
+  .gallery-section { padding: 100px 80px; background: var(--navy-deep); }
+  .gallery-section .section-label { color: var(--green-bright); }
+  .gallery-section .section-title { color: #fff; }
+  .gallery-section .section-sub { color: var(--light); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; margin-top: 44px; }
   .gallery-item { position: relative; overflow: hidden; }
-
   .gallery-item img {
     width: 100%;
     height: 280px;
     object-fit: cover;
     display: block;
     transition: transform 0.4s, filter 0.4s;
-    filter: brightness(0.82);
+    filter: brightness(0.92);
   }
-
-  .gallery-item:hover img { transform: scale(1.04); filter: brightness(1); }
-
+  .gallery-item:hover img { transform: scale(1.04); filter: brightness(1.04); }
   .gallery-tag {
     position: absolute;
     top: 12px;
@@ -617,103 +503,66 @@
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
     font-size: 0.66rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
     padding: 5px 11px;
+    color: #fff;
   }
-
   .tag-before { background: var(--hazard); }
-  .tag-after { background: var(--verified); color: var(--ink); }
+  .tag-after { background: var(--green); }
 
   /* ── WAYS TO WORK ── */
   .ways-section { padding: 100px 80px; }
-
   .ways-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+    gap: 1px;
     background: var(--line);
     margin-top: 44px;
+    border: 1px solid var(--line);
   }
-
-  .way-card {
-    background: var(--card);
-    padding: 40px 32px;
-    transition: background 0.2s;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .way-card:hover { background: var(--card-hover); }
-
-  .way-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--mute);
-    margin-bottom: 20px;
-  }
-
+  .way-card { background: var(--surface); padding: 40px 32px; transition: background 0.2s; display: flex; flex-direction: column; }
+  .way-card:hover { background: var(--alt); }
+  .way-num { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--mute); margin-bottom: 20px; }
   .way-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.02em;
+    color: var(--navy);
     margin-bottom: 12px;
   }
+  .way-desc { font-size: 0.92rem; line-height: 1.6; color: var(--mute); margin-bottom: 24px; flex-grow: 1; }
+  .way-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--green); }
+  .way-card.highlight { background: var(--green); }
+  .way-card.highlight .way-num { color: rgba(255,255,255,0.6); }
+  .way-card.highlight .way-title, .way-card.highlight .way-price { color: #fff; }
+  .way-card.highlight .way-desc { color: rgba(255,255,255,0.85); }
 
-  .way-desc {
-    font-size: 0.92rem;
-    line-height: 1.6;
-    color: var(--mute);
-    margin-bottom: 24px;
-    flex-grow: 1;
-  }
-
-  .way-price {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1.05rem;
-    color: var(--amber);
-  }
-
-  .way-card.highlight { background: var(--amber); }
-  .way-card.highlight .way-num { color: rgba(0,0,0,0.5); }
-  .way-card.highlight .way-title,
-  .way-card.highlight .way-price { color: var(--ink); }
-  .way-card.highlight .way-desc { color: rgba(0,0,0,0.7); }
-
-  /* ── WHY ── */
+  /* ── WHY (soft alt band) ── */
   .why-section {
     padding: 100px 80px;
-    background: var(--navy);
+    background: var(--alt);
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 72px;
     align-items: center;
   }
-
-  .why-points { display: flex; flex-direction: column; gap: 2px; }
-
-  .why-point {
-    background: var(--card);
-    padding: 24px 28px;
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
-    transition: background 0.2s;
-  }
-
-  .why-point:hover { background: var(--card-hover); }
-
+  .why-points { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .why-point { background: var(--surface); padding: 24px 28px; display: flex; gap: 18px; align-items: flex-start; transition: background 0.2s; }
+  .why-point:hover { background: var(--green-soft); }
   .why-check {
-    color: var(--verified);
+    color: #fff;
+    background: var(--green);
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem;
     font-weight: 900;
-    font-size: 1.1rem;
     margin-top: 2px;
     flex-shrink: 0;
   }
-
   .why-text strong {
     display: block;
     font-family: 'Barlow Condensed', sans-serif;
@@ -721,28 +570,18 @@
     font-size: 1.05rem;
     text-transform: uppercase;
     letter-spacing: 0.02em;
+    color: var(--navy);
     margin-bottom: 4px;
   }
-
   .why-text span { font-size: 0.88rem; color: var(--mute); line-height: 1.5; }
 
   /* ── CONTACT ── */
-  .contact-section {
-    padding: 100px 80px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 72px;
-    align-items: start;
-  }
-
+  .contact-section { padding: 100px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
   .contact-form { display: flex; flex-direction: column; gap: 13px; }
-
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea {
-    background: rgba(255,255,255,0.04);
+  .contact-form input, .contact-form select, .contact-form textarea {
+    background: var(--surface);
     border: 1px solid var(--line);
-    color: var(--paper);
+    color: var(--ink);
     font-family: 'Barlow', sans-serif;
     font-size: 0.95rem;
     padding: 14px 16px;
@@ -750,84 +589,54 @@
     transition: border-color 0.2s;
     width: 100%;
   }
-
-  .contact-form input:focus,
-  .contact-form select:focus,
-  .contact-form textarea:focus { border-color: var(--amber); }
-
-  .contact-form select option { background: var(--panel); }
+  .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--green); }
   .contact-form textarea { resize: vertical; min-height: 120px; }
-
-  .contact-form .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 13px;
-  }
-
-  .form-note {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--mute);
-    margin-top: 4px;
-  }
-
-  .info-item {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    margin-bottom: 24px;
-    margin-top: 28px;
-  }
-
+  .contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+  .form-note { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--mute); margin-top: 4px; }
+  .info-item { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 24px; margin-top: 28px; }
   .info-icon {
     width: 40px; height: 40px;
-    background: var(--amber);
+    background: var(--green);
     display: flex; align-items: center; justify-content: center;
-    font-size: 1rem; color: var(--ink);
+    font-size: 1rem; color: #fff;
     flex-shrink: 0;
   }
-
   .info-label {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.66rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     color: var(--mute);
     margin-bottom: 4px;
   }
-
-  .info-value {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 1.15rem;
-  }
+  .info-value { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 1.15rem; color: var(--navy); }
 
   /* ── FOOTER ── */
   footer {
-    background: var(--ink);
-    padding: 36px 80px;
+    background: var(--navy-deep);
+    padding: 40px 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
     flex-wrap: wrap;
-    border-top: 1px solid var(--line);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.74rem;
-    color: var(--mute);
   }
-
-  footer .foot-brand { color: var(--paper); letter-spacing: 0.04em; }
-  footer .foot-brand b { color: var(--amber); }
+  .foot-brand { display: flex; align-items: center; gap: 12px; }
+  .foot-brand img { height: 42px; width: auto; }
+  .foot-brand .foot-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+  .foot-brand .foot-name .o { color: var(--green-bright); }
+  .foot-meta { font-family: 'IBM Plex Mono', monospace; font-size: 0.73rem; color: #93a0b2; text-align: right; line-height: 1.7; }
 
   /* ── SCROLL REVEAL ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: none; }
-
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
@@ -835,12 +644,15 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 980px) {
-    nav { padding: 0 20px; }
+    nav { padding: 0 18px; height: 64px; }
     .nav-links { display: none; }
-    .brand-sub { display: none; }
-    .awaab-banner { padding: 12px 20px; font-size: 0.82rem; }
-    .hero { grid-template-columns: 1fr; padding: 56px 22px; gap: 36px; }
-    .hero-visual { display: none; }
+    .brand-tag { display: none; }
+    .brand img { height: 34px; }
+    .brand-name { font-size: 1.12rem; }
+    .awaab-banner { margin-top: 64px; padding: 12px 18px; font-size: 0.82rem; }
+    .hero { grid-template-columns: 1fr; padding: 48px 22px; gap: 30px; text-align: left; }
+    .hero-visual { order: -1; }
+    .hero-visual img { max-width: 280px; }
     .compliance-section, .protocol-section, .gallery-section,
     .ways-section, .why-section, .contact-section { padding: 60px 22px; }
     .chem-section { padding: 0 22px 60px; }
@@ -854,7 +666,8 @@
     .gallery-grid { grid-template-columns: 1fr 1fr; }
     .ways-grid { grid-template-columns: 1fr; }
     .why-section, .contact-section { grid-template-columns: 1fr; gap: 40px; }
-    footer { padding: 28px 22px; flex-direction: column; text-align: center; }
+    footer { padding: 32px 22px; flex-direction: column; text-align: center; }
+    .foot-meta { text-align: center; }
   }
 </style>
 </head>
@@ -863,8 +676,11 @@
 <!-- NAV -->
 <nav>
   <a href="#top" class="brand">
-    <span class="brand-mark">Open <span>Source</span></span>
-    <span class="brand-sub">Mould Management</span>
+    <img src="https://cdn.jsdelivr.net/gh/Zorian/zentox@main/assets/mark.png" alt="Open Source Mould Management shield">
+    <span class="brand-text">
+      <span class="brand-name"><span class="o">Open</span> <span class="s">Source</span></span>
+      <span class="brand-tag">Mould Management</span>
+    </span>
   </a>
   <ul class="nav-links">
     <li><a href="#protocol">The Protocol</a></li>
@@ -912,10 +728,7 @@
     </div>
   </div>
   <div class="hero-visual">
-    <div class="hero-img-wrap">
-      <img src="https://cdn.jsdelivr.net/gh/Zorian/zentox@main/images/image_01.jpeg" alt="Severe mould damage in a social housing property before treatment">
-      <span class="hero-img-label">REAL CASE — BEFORE TREATMENT</span>
-    </div>
+    <img src="https://cdn.jsdelivr.net/gh/Zorian/zentox@main/assets/logo.png" alt="Open Source Mould Management logo">
   </div>
 </section>
 
@@ -964,7 +777,6 @@
   </div>
 
   <div class="steps">
-    <!-- 01 -->
     <div class="step">
       <div class="step-index mono">STEP<span class="big">01</span></div>
       <div>
@@ -973,7 +785,6 @@
       </div>
       <div class="step-spec mono"><span class="k">OUTPUT:</span> <span class="v">Written survey + moisture map + photo log</span></div>
     </div>
-    <!-- 02 -->
     <div class="step">
       <div class="step-index mono">STEP<span class="big">02</span></div>
       <div>
@@ -982,7 +793,6 @@
       </div>
       <div class="step-spec mono"><span class="k">CONTROL:</span> <span class="v">Spore containment · safe removal of affected materials</span></div>
     </div>
-    <!-- 03 -->
     <div class="step">
       <div class="step-index mono">STEP<span class="big">03</span></div>
       <div>
@@ -991,7 +801,6 @@
       </div>
       <div class="step-spec mono"><span class="k">PRODUCT:</span> <span class="v">Benzalkonium chloride fungicidal wash · HSE-approved surface biocide</span></div>
     </div>
-    <!-- 04 -->
     <div class="step">
       <div class="step-index mono">STEP<span class="big">04</span></div>
       <div>
@@ -1000,7 +809,6 @@
       </div>
       <div class="step-spec mono"><span class="k">ROOT&nbsp;CAUSE:</span> <span class="v">Make-good · ventilation / extraction · moisture control</span></div>
     </div>
-    <!-- 05 -->
     <div class="step final">
       <div class="step-index mono">STEP<span class="big">05</span></div>
       <div>
@@ -1192,18 +1000,20 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="foot-brand">○ OPEN <b>SOURCE</b> — Mould Management</div>
-  <div>Damp &amp; Mould Compliance · UK-Wide</div>
-  <div>© 2026 Open Source. All rights reserved.</div>
+  <div class="foot-brand">
+    <img src="https://cdn.jsdelivr.net/gh/Zorian/zentox@main/assets/mark.png" alt="Open Source Mould Management shield">
+    <span class="foot-name"><span class="o">Open</span> Source — Mould Management</span>
+  </div>
+  <div class="foot-meta">
+    Damp &amp; Mould Compliance · UK-Wide<br>
+    © 2026 Open Source. All rights reserved.
+  </div>
 </footer>
 
 <script>
-  // Scroll reveal
   var reveals = document.querySelectorAll('.reveal');
   var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); }
-    });
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); } });
   }, { threshold: 0.1 });
   reveals.forEach(function (r) { observer.observe(r); });
 
@@ -1212,25 +1022,20 @@
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var name = (document.getElementById('f-name').value || '').trim();
-      var org = (document.getElementById('f-org').value || '').trim();
-      var email = (document.getElementById('f-email').value || '').trim();
-      var phone = (document.getElementById('f-phone').value || '').trim();
-      var type = (document.getElementById('f-type').value || '').trim();
-      var msg = (document.getElementById('f-msg').value || '').trim();
+      var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+      var type = v('f-type'), org = v('f-org');
       var subject = 'Enquiry' + (type ? ' — ' + type : '') + (org ? ' (' + org + ')' : '');
       var body = [
-        'Name: ' + name,
+        'Name: ' + v('f-name'),
         'Organisation: ' + org,
-        'Email: ' + email,
-        'Phone: ' + phone,
+        'Email: ' + v('f-email'),
+        'Phone: ' + v('f-phone'),
         'Enquiry type: ' + type,
         '',
-        msg
+        v('f-msg')
       ].join('\n');
-      window.location.href = 'mailto:hello@opensourcemm.co.uk'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(body);
+      window.location.href = 'mailto:hello@opensourcemm.co.uk?subject='
+        + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     });
   }
 </script>
