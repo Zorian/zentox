@@ -3,32 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zentox | Damp & Mould Compliance Specialists</title>
+<title>Open Source Mould Management | Damp &amp; Mould Compliance, Fully Documented</title>
+<meta name="description" content="Open Source Mould Management is the transparent damp &amp; mould compliance partner for social housing. We publish our exact treatment protocol and the HSE-approved chemicals we use — survey to sign-off, fully documented for Awaab's Law.">
+<meta name="theme-color" content="#0b0d10">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Open Source Mould Management — Damp &amp; Mould Compliance, Fully Documented">
+<meta property="og:description" content="The transparent damp &amp; mould partner for social housing. Every chemical named, every step documented, every job auditable. Built for Awaab's Law.">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Zorian/zentox@main/images/image_05.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Favicon: open circle + check = open + verified -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0d10'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23f59e0b' stroke-width='2.5'/%3E%3Cpath d='M12 16.5l2.8 2.8L21 13' fill='none' stroke='%23f59e0b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #0a0a0a;
-    --dark: #111318;
-    --card: #16191f;
-    --border: #252830;
-    --navy: #0d1b2e;
+    --ink: #0b0d10;
+    --panel: #14171c;
+    --card: #181c22;
+    --card-hover: #1e232b;
+    --line: #262b33;
+    --navy: #0c1828;
     --amber: #f59e0b;
     --amber-light: #fbbf24;
-    --red: #e53935;
-    --white: #f5f5f0;
-    --grey: #8892a4;
-    --light: #c8d0dc;
+    --hazard: #e5484d;
+    --verified: #34d399;
+    --paper: #f5f5f0;
+    --mute: #858e9c;
+    --soft: #c5cdd9;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html { scroll-behavior: smooth; }
+
   body {
     font-family: 'Barlow', sans-serif;
-    background: var(--dark);
-    color: var(--white);
+    background: var(--panel);
+    color: var(--paper);
     overflow-x: hidden;
   }
+
+  ::selection { background: var(--amber); color: var(--ink); }
+
+  .mono { font-family: 'IBM Plex Mono', monospace; }
 
   /* ── NAV ── */
   nav {
@@ -39,86 +58,118 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
-    height: 64px;
-    background: rgba(10,10,10,0.95);
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(8px);
+    height: 66px;
+    background: rgba(11,13,16,0.94);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
   }
 
-  .logo {
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .brand-mark {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
-    font-size: 1.6rem;
-    letter-spacing: 0.06em;
-    color: var(--white);
-    text-transform: uppercase;
-  }
-
-  .logo span { color: var(--amber); }
-
-  nav a.cta-nav {
-    background: var(--amber);
-    color: var(--black);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 10px 22px;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  nav a.cta-nav:hover { background: var(--amber-light); }
-
-  nav .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-
-  nav .nav-links a {
-    color: var(--grey);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1.5rem;
     letter-spacing: 0.04em;
+    color: var(--paper);
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1;
+  }
+
+  .brand-mark::before {
+    content: '';
+    width: 13px;
+    height: 13px;
+    border: 2.5px solid var(--amber);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .brand-mark span { color: var(--amber); }
+
+  .brand-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin-left: auto;
+    margin-right: 30px;
+  }
+
+  .nav-links a {
+    color: var(--mute);
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
     transition: color 0.2s;
   }
 
-  nav .nav-links a:hover { color: var(--white); }
+  .nav-links a:hover { color: var(--paper); }
+
+  a.cta-nav {
+    background: var(--amber);
+    color: var(--ink);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 11px 22px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  a.cta-nav:hover { background: var(--amber-light); transform: translateY(-1px); }
 
   /* ── AWAAB BANNER ── */
   .awaab-banner {
-    margin-top: 64px;
-    background: var(--red);
-    padding: 14px 40px;
+    margin-top: 66px;
+    background: var(--hazard);
+    padding: 13px 40px;
     display: flex;
     align-items: center;
     gap: 16px;
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.95rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
   }
 
   .awaab-banner .pill {
-    background: rgba(0,0,0,0.25);
-    padding: 4px 12px;
-    font-size: 0.75rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    background: rgba(0,0,0,0.28);
+    padding: 4px 11px;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
     white-space: nowrap;
   }
 
   /* ── HERO ── */
   .hero {
-    min-height: 88vh;
+    min-height: 86vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
-    padding: 80px 40px 80px 80px;
-    gap: 60px;
+    padding: 76px 40px 76px 80px;
+    gap: 56px;
     position: relative;
     overflow: hidden;
   }
@@ -126,19 +177,19 @@
   .hero::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(245,158,11,0.06) 0%, transparent 60%);
+    inset: 0;
+    background: radial-gradient(ellipse at 75% 45%, rgba(245,158,11,0.07) 0%, transparent 58%);
     pointer-events: none;
   }
 
   .hero-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--amber);
-    margin-bottom: 24px;
+    margin-bottom: 26px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -146,8 +197,7 @@
 
   .hero-label::before {
     content: '';
-    display: block;
-    width: 32px;
+    width: 30px;
     height: 2px;
     background: var(--amber);
   }
@@ -155,11 +205,11 @@
   h1 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
-    font-size: clamp(3rem, 5.5vw, 5.5rem);
-    line-height: 0.95;
+    font-size: clamp(2.8rem, 5.2vw, 5.2rem);
+    line-height: 0.94;
     text-transform: uppercase;
     letter-spacing: -0.01em;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
 
   h1 em {
@@ -169,46 +219,50 @@
   }
 
   .hero-sub {
-    font-size: 1.1rem;
+    font-size: 1.08rem;
     font-weight: 300;
     line-height: 1.7;
-    color: var(--light);
-    max-width: 480px;
-    margin-bottom: 40px;
+    color: var(--soft);
+    max-width: 470px;
+    margin-bottom: 36px;
   }
+
+  .hero-sub strong { color: var(--paper); font-weight: 500; }
 
   .hero-ctas {
     display: flex;
-    gap: 16px;
+    gap: 14px;
     flex-wrap: wrap;
     align-items: center;
   }
 
   .btn-primary {
     background: var(--amber);
-    color: var(--black);
+    color: var(--ink);
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
     font-size: 1rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 16px 36px;
+    padding: 16px 34px;
     text-decoration: none;
     transition: all 0.2s;
     display: inline-block;
+    border: none;
+    cursor: pointer;
   }
 
   .btn-primary:hover { background: var(--amber-light); transform: translateY(-2px); }
 
   .btn-ghost {
-    border: 1px solid var(--border);
-    color: var(--light);
+    border: 1px solid var(--line);
+    color: var(--soft);
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 600;
     font-size: 1rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 16px 36px;
+    padding: 16px 34px;
     text-decoration: none;
     transition: all 0.2s;
     display: inline-block;
@@ -216,109 +270,111 @@
 
   .btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
 
-  /* ── HERO STATS ── */
   .hero-stats {
     display: flex;
-    gap: 40px;
-    margin-top: 48px;
-    padding-top: 40px;
-    border-top: 1px solid var(--border);
+    gap: 36px;
+    margin-top: 44px;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
   }
 
   .stat-item .num {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     color: var(--amber);
+    line-height: 1;
   }
 
   .stat-item .label {
-    font-size: 0.8rem;
-    color: var(--grey);
+    font-size: 0.78rem;
+    color: var(--mute);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-top: 4px;
+    letter-spacing: 0.05em;
+    margin-top: 6px;
+    max-width: 130px;
   }
 
   /* ── HERO IMAGE ── */
-  .hero-visual {
-    position: relative;
-  }
+  .hero-visual { position: relative; }
 
   .hero-img-wrap {
     position: relative;
     overflow: hidden;
+    border: 1px solid var(--line);
   }
 
   .hero-img-wrap img {
     width: 100%;
-    height: 520px;
+    height: 500px;
     object-fit: cover;
     display: block;
-    filter: brightness(0.9);
+    filter: brightness(0.88);
   }
 
   .hero-img-label {
     position: absolute;
-    bottom: 16px;
-    left: 16px;
-    background: var(--red);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 6px 14px;
-  }
-
-  /* ── COMPLIANCE DEADLINES ── */
-  .compliance-section {
-    background: var(--navy);
-    padding: 80px 80px;
-    border-top: 3px solid var(--amber);
-  }
-
-  .section-label {
-    font-family: 'Barlow Condensed', sans-serif;
+    bottom: 14px;
+    left: 14px;
+    background: var(--hazard);
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+  }
+
+  /* ── SHARED SECTION HEADERS ── */
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--amber);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .section-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-size: clamp(1.9rem, 3.2vw, 2.9rem);
     text-transform: uppercase;
     letter-spacing: -0.01em;
-    margin-bottom: 12px;
+    line-height: 1.02;
+    margin-bottom: 14px;
   }
 
   .section-sub {
-    color: var(--grey);
+    color: var(--mute);
     font-size: 1rem;
-    max-width: 560px;
-    line-height: 1.6;
-    margin-bottom: 48px;
+    max-width: 580px;
+    line-height: 1.65;
+  }
+
+  /* ── COMPLIANCE DEADLINES ── */
+  .compliance-section {
+    background: var(--navy);
+    padding: 80px;
+    border-top: 3px solid var(--amber);
   }
 
   .deadlines-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2px;
-    background: var(--border);
+    background: var(--line);
+    margin-top: 44px;
   }
 
   .deadline-card {
     background: var(--card);
-    padding: 36px 28px;
+    padding: 34px 26px;
     transition: background 0.2s;
   }
 
-  .deadline-card:hover { background: #1c2030; }
+  .deadline-card:hover { background: var(--card-hover); }
 
   .deadline-time {
     font-family: 'Barlow Condensed', sans-serif;
@@ -329,130 +385,227 @@
   }
 
   .deadline-unit {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--grey);
-    margin-bottom: 16px;
-    margin-top: 2px;
+    color: var(--mute);
+    margin: 6px 0 16px;
   }
 
   .deadline-desc {
     font-size: 0.9rem;
     line-height: 1.5;
-    color: var(--light);
+    color: var(--soft);
   }
 
-  .deadline-emergency {
-    border-top: 3px solid var(--red);
-  }
+  .deadline-emergency { border-top: 3px solid var(--hazard); }
+  .deadline-emergency .deadline-time { color: var(--hazard); }
 
-  .deadline-emergency .deadline-time { color: var(--red); }
-
-  /* ── SERVICES ── */
-  .services-section {
+  /* ── THE PROTOCOL (signature) ── */
+  .protocol-section {
     padding: 100px 80px;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    background: var(--border);
-    margin-top: 48px;
-  }
-
-  .service-card {
-    background: var(--card);
-    padding: 40px 32px;
     position: relative;
-    overflow: hidden;
+  }
+
+  .protocol-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+  }
+
+  .protocol-open-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--mute);
+    border: 1px solid var(--line);
+    padding: 10px 16px;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .protocol-open-tag b { color: var(--verified); font-weight: 600; }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--line);
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 130px 1fr 300px;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
     transition: background 0.2s;
   }
 
-  .service-card:hover { background: #1c2030; }
+  .step:hover { background: rgba(255,255,255,0.015); }
 
-  .service-num {
+  .step-index {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--amber);
+    letter-spacing: 0.06em;
+    padding-top: 4px;
+  }
+
+  .step-index .big {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
-    font-size: 4rem;
-    color: var(--border);
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    line-height: 1;
-    user-select: none;
+    font-size: 2.6rem;
+    color: var(--paper);
+    display: block;
+    line-height: 0.9;
+    margin-top: 6px;
   }
 
-  .service-icon {
-    width: 40px;
-    height: 3px;
-    background: var(--amber);
-    margin-bottom: 24px;
-  }
-
-  .service-title {
+  .step-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
   }
 
-  .service-desc {
-    font-size: 0.9rem;
+  .step-desc {
+    font-size: 0.95rem;
     line-height: 1.6;
-    color: var(--grey);
-    margin-bottom: 20px;
+    color: var(--soft);
+    max-width: 540px;
   }
 
-  .service-price {
+  .step-desc em { font-style: normal; color: var(--amber); }
+
+  .step-spec {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.74rem;
+    line-height: 1.7;
+    color: var(--mute);
+    background: var(--card);
+    border-left: 2px solid var(--amber);
+    padding: 14px 16px;
+  }
+
+  .step-spec .k { color: var(--amber); }
+  .step-spec .v { color: var(--soft); }
+
+  .step.final { background: rgba(52,211,153,0.04); }
+  .step.final .step-index .big { color: var(--verified); }
+  .step.final .step-spec { border-left-color: var(--verified); }
+  .step.final .step-spec .k { color: var(--verified); }
+  .step.final .step-title::after {
+    content: 'PREVENTS REGROWTH';
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+    background: var(--verified);
+    padding: 3px 8px;
+    margin-left: 12px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  /* ── CHEMICAL DISCLOSURE ── */
+  .chem-section { padding: 0 80px 100px; }
+
+  .chem-panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chem-intro {
+    padding: 48px 44px;
+    border-right: 1px solid var(--line);
+  }
+
+  .chem-intro h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+
+  .chem-intro p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--soft);
+    margin-bottom: 14px;
+  }
+
+  .chem-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--verified);
+    border: 1px solid rgba(52,211,153,0.4);
+    padding: 7px 12px;
+    margin-top: 8px;
+  }
+
+  .chem-list { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+
+  .chem-item { padding: 20px 22px; background: var(--panel); border: 1px solid var(--line); }
+
+  .chem-item .stage {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+
+  .chem-item .compound {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
-    color: var(--amber);
-    letter-spacing: 0.04em;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
   }
 
-  /* ── RETAINER HIGHLIGHT ── */
-  .service-card.highlight {
-    background: var(--amber);
-    color: var(--black);
-  }
+  .chem-item .note { font-size: 0.86rem; color: var(--mute); line-height: 1.55; }
 
-  .service-card.highlight .service-desc { color: rgba(0,0,0,0.65); }
-  .service-card.highlight .service-price { color: var(--black); }
-  .service-card.highlight .service-num { color: rgba(0,0,0,0.1); }
-
-  /* ── BEFORE/AFTER ── */
+  /* ── GALLERY ── */
   .gallery-section {
     padding: 100px 80px;
-    background: var(--black);
+    background: var(--ink);
   }
 
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3px;
-    margin-top: 48px;
+    margin-top: 44px;
   }
 
-  .gallery-item {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
+  .gallery-item { position: relative; overflow: hidden; }
 
   .gallery-item img {
     width: 100%;
     height: 280px;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s;
-    filter: brightness(0.85);
+    transition: transform 0.4s, filter 0.4s;
+    filter: brightness(0.82);
   }
 
   .gallery-item:hover img { transform: scale(1.04); filter: brightness(1); }
@@ -461,48 +614,102 @@
     position: absolute;
     top: 12px;
     left: 12px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 5px 12px;
+    padding: 5px 11px;
   }
 
-  .tag-before { background: var(--red); }
-  .tag-after { background: #22c55e; color: #000; }
+  .tag-before { background: var(--hazard); }
+  .tag-after { background: var(--verified); color: var(--ink); }
 
-  /* ── WHY US ── */
+  /* ── WAYS TO WORK ── */
+  .ways-section { padding: 100px 80px; }
+
+  .ways-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--line);
+    margin-top: 44px;
+  }
+
+  .way-card {
+    background: var(--card);
+    padding: 40px 32px;
+    transition: background 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .way-card:hover { background: var(--card-hover); }
+
+  .way-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--mute);
+    margin-bottom: 20px;
+  }
+
+  .way-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+  }
+
+  .way-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--mute);
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  .way-price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--amber);
+  }
+
+  .way-card.highlight { background: var(--amber); }
+  .way-card.highlight .way-num { color: rgba(0,0,0,0.5); }
+  .way-card.highlight .way-title,
+  .way-card.highlight .way-price { color: var(--ink); }
+  .way-card.highlight .way-desc { color: rgba(0,0,0,0.7); }
+
+  /* ── WHY ── */
   .why-section {
     padding: 100px 80px;
+    background: var(--navy);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 72px;
     align-items: center;
   }
 
-  .why-points {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
+  .why-points { display: flex; flex-direction: column; gap: 2px; }
 
   .why-point {
     background: var(--card);
     padding: 24px 28px;
     display: flex;
-    gap: 20px;
+    gap: 18px;
     align-items: flex-start;
     transition: background 0.2s;
   }
 
-  .why-point:hover { background: #1c2030; }
+  .why-point:hover { background: var(--card-hover); }
 
   .why-check {
-    color: var(--amber);
-    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--verified);
     font-weight: 900;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-top: 2px;
     flex-shrink: 0;
   }
@@ -511,43 +718,34 @@
     display: block;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.05rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
     margin-bottom: 4px;
   }
 
-  .why-text span {
-    font-size: 0.88rem;
-    color: var(--grey);
-    line-height: 1.5;
-  }
+  .why-text span { font-size: 0.88rem; color: var(--mute); line-height: 1.5; }
 
   /* ── CONTACT ── */
   .contact-section {
     padding: 100px 80px;
-    background: var(--navy);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 72px;
     align-items: start;
   }
 
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
+  .contact-form { display: flex; flex-direction: column; gap: 13px; }
 
   .contact-form input,
   .contact-form select,
   .contact-form textarea {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid var(--border);
-    color: var(--white);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--line);
+    color: var(--paper);
     font-family: 'Barlow', sans-serif;
     font-size: 0.95rem;
-    padding: 14px 18px;
+    padding: 14px 16px;
     outline: none;
     transition: border-color 0.2s;
     width: 100%;
@@ -557,85 +755,106 @@
   .contact-form select:focus,
   .contact-form textarea:focus { border-color: var(--amber); }
 
-  .contact-form select option { background: var(--dark); }
-
+  .contact-form select option { background: var(--panel); }
   .contact-form textarea { resize: vertical; min-height: 120px; }
 
   .contact-form .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 13px;
   }
 
-  .contact-info .info-item {
+  .form-note {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--mute);
+    margin-top: 4px;
+  }
+
+  .info-item {
     display: flex;
     gap: 16px;
     align-items: flex-start;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
+    margin-top: 28px;
   }
 
   .info-icon {
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     background: var(--amber);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    color: var(--black);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: var(--ink);
     flex-shrink: 0;
   }
 
   .info-label {
-    font-size: 0.75rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--grey);
+    letter-spacing: 0.06em;
+    color: var(--mute);
     margin-bottom: 4px;
   }
 
   .info-value {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   /* ── FOOTER ── */
   footer {
-    background: var(--black);
-    padding: 32px 80px;
+    background: var(--ink);
+    padding: 36px 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--border);
-    font-size: 0.82rem;
-    color: var(--grey);
+    gap: 16px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--mute);
   }
 
-  /* ── SCROLL ANIMATION ── */
+  footer .foot-brand { color: var(--paper); letter-spacing: 0.04em; }
+  footer .foot-brand b { color: var(--amber); }
+
+  /* ── SCROLL REVEAL ── */
   .reveal {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(28px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
+  .reveal.visible { opacity: 1; transform: none; }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: none;
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
   }
 
-  @media (max-width: 900px) {
+  /* ── RESPONSIVE ── */
+  @media (max-width: 980px) {
     nav { padding: 0 20px; }
-    nav .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; padding: 60px 24px; }
+    .nav-links { display: none; }
+    .brand-sub { display: none; }
+    .awaab-banner { padding: 12px 20px; font-size: 0.82rem; }
+    .hero { grid-template-columns: 1fr; padding: 56px 22px; gap: 36px; }
     .hero-visual { display: none; }
-    .compliance-section, .services-section, .gallery-section, .why-section, .contact-section { padding: 60px 24px; }
+    .compliance-section, .protocol-section, .gallery-section,
+    .ways-section, .why-section, .contact-section { padding: 60px 22px; }
+    .chem-section { padding: 0 22px 60px; }
     .deadlines-grid { grid-template-columns: 1fr 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
+    .step { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; }
+    .step-index { display: flex; align-items: baseline; gap: 12px; }
+    .step-index .big { margin-top: 0; }
+    .step.final .step-title::after { display: block; margin: 8px 0 0; width: max-content; }
+    .chem-panel { grid-template-columns: 1fr; }
+    .chem-intro { border-right: none; border-bottom: 1px solid var(--line); }
     .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .ways-grid { grid-template-columns: 1fr; }
     .why-section, .contact-section { grid-template-columns: 1fr; gap: 40px; }
-    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
-    .contact-form .form-row { grid-template-columns: 1fr; }
+    footer { padding: 28px 22px; flex-direction: column; text-align: center; }
   }
 </style>
 </head>
@@ -643,145 +862,187 @@
 
 <!-- NAV -->
 <nav>
-  <div class="logo">Zen<span>tox</span></div>
+  <a href="#top" class="brand">
+    <span class="brand-mark">Open <span>Source</span></span>
+    <span class="brand-sub">Mould Management</span>
+  </a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#gallery">Results</a></li>
+    <li><a href="#protocol">The Protocol</a></li>
+    <li><a href="#chemicals">What We Use</a></li>
+    <li><a href="#results">Results</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="tel:+443300000000" class="cta-nav">📞 Get a Quote</a>
+  <a href="#contact" class="cta-nav">Get a Quote</a>
 </nav>
 
 <!-- AWAAB BANNER -->
-<div class="awaab-banner">
-  <span class="pill">⚠ Awaab's Law Now In Force</span>
-  <span>Housing associations face legal action for damp & mould delays — We keep you compliant.</span>
+<div class="awaab-banner" id="top">
+  <span class="pill">⚠ AWAAB'S LAW · IN FORCE</span>
+  <span>Social landlords now face court action for damp &amp; mould delays. We keep you compliant — and prove it.</span>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-label">UK-Wide Compliance Specialists</div>
+    <div class="hero-label">Open by default · Social housing compliance</div>
     <h1>
-      Damp &amp; Mould<br>
-      <em>Eliminated.</em>
-      Compliance<br>
-      <em>Guaranteed.</em>
+      Damp &amp; Mould,<br>
+      <em>Gone.</em>
+      Compliance,<br>
+      <em>Proven.</em>
     </h1>
-    <p class="hero-sub">The one-stop damp and mould compliance partner for social housing. Survey, remediation, documentation — everything you need to meet Awaab's Law deadlines, handled.</p>
+    <p class="hero-sub">The transparent damp and mould partner for social housing. We publish <strong>exactly</strong> what we do and <strong>exactly</strong> what we use — survey to sign-off, fully documented for Awaab's Law. Nothing hidden from you, or your tenants.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn-primary">Request a Survey</a>
-      <a href="#services" class="btn-ghost">Our Services</a>
+      <a href="#protocol" class="btn-ghost">See the Protocol</a>
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="num">474%</div>
-        <div class="label">Rise in ombudsman complaints</div>
+        <div class="num">50%</div>
+        <div class="label">of Ombudsman cases are damp &amp; mould</div>
       </div>
       <div class="stat-item">
         <div class="num">24hr</div>
-        <div class="label">Emergency response</div>
+        <div class="label">emergency response</div>
       </div>
       <div class="stat-item">
         <div class="num">100%</div>
-        <div class="label">Documented compliance</div>
+        <div class="label">documented &amp; auditable</div>
       </div>
     </div>
   </div>
   <div class="hero-visual">
     <div class="hero-img-wrap">
-      <img src="https://cdn.jsdelivr.net/gh/Zorian/zentox@main/images/image_01.jpeg" alt="Severe mould damage in social housing property">
-      <span class="hero-img-label">⚠ Real Case — Before Treatment</span>
+      <img src="https://cdn.jsdelivr.net/gh/Zorian/zentox@main/images/image_01.jpeg" alt="Severe mould damage in a social housing property before treatment">
+      <span class="hero-img-label">REAL CASE — BEFORE TREATMENT</span>
     </div>
   </div>
 </section>
 
 <!-- COMPLIANCE DEADLINES -->
 <section class="compliance-section reveal" id="compliance">
-  <div class="section-label">Awaab's Law — October 2025</div>
-  <h2 class="section-title">Your Legal Deadlines.<br>Our Expertise.</h2>
-  <p class="section-sub">Every social landlord in England is now legally bound to these response times. Failure means tenants can take you to court. We make sure you never miss a deadline.</p>
+  <div class="section-label">Awaab's Law — in force since 27 Oct 2025</div>
+  <h2 class="section-title">Your Legal Deadlines.<br>We Hit Every One.</h2>
+  <p class="section-sub">Every social landlord in England is now legally bound to these response times for damp and mould. Miss them and tenants can take you to court. Our process is built around them.</p>
   <div class="deadlines-grid">
     <div class="deadline-card">
       <div class="deadline-time">10</div>
       <div class="deadline-unit">Working Days</div>
-      <div class="deadline-desc">Investigate any reported damp or mould hazard with a full written survey</div>
+      <div class="deadline-desc">Investigate any reported damp or mould hazard with a full written survey.</div>
     </div>
     <div class="deadline-card">
       <div class="deadline-time">3</div>
       <div class="deadline-unit">Working Days</div>
-      <div class="deadline-desc">Provide tenant with written findings — our reports meet full Awaab's Law requirements</div>
+      <div class="deadline-desc">Give the tenant written findings — our reports meet Awaab's Law requirements in full.</div>
     </div>
     <div class="deadline-card">
       <div class="deadline-time">5</div>
       <div class="deadline-unit">Working Days</div>
-      <div class="deadline-desc">Begin remediation if a significant risk is identified — we mobilise fast</div>
+      <div class="deadline-desc">Begin making the property safe where a significant risk is identified. We mobilise fast.</div>
     </div>
     <div class="deadline-card deadline-emergency">
       <div class="deadline-time">24</div>
       <div class="deadline-unit">Hours</div>
-      <div class="deadline-desc">Fix emergency hazards. We offer 24-hour rapid response for critical cases</div>
+      <div class="deadline-desc">Make emergency hazards safe. We run a 24-hour rapid response for critical cases.</div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services-section reveal" id="services">
-  <div class="section-label">What We Do</div>
-  <h2 class="section-title">Full-Scope Compliance.<br>Start to Sign-Off.</h2>
-  <p class="section-sub">From first survey through to compliance documentation — we handle the entire process so your team doesn't have to.</p>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <div class="service-icon"></div>
-      <div class="service-title">Damp Survey & Assessment</div>
-      <div class="service-desc">CSRT-qualified surveyor. Full moisture mapping, photo evidence, written diagnostic report meeting Awaab's Law documentation requirements.</div>
-      <div class="service-price">From £250 per property</div>
+<!-- THE PROTOCOL -->
+<section class="protocol-section reveal" id="protocol">
+  <div class="protocol-head">
+    <div>
+      <div class="section-label">The Protocol — open &amp; documented</div>
+      <h2 class="section-title">Five Steps.<br>Nothing Hidden.</h2>
+      <p class="section-sub">This is our exact treatment plan, published in full. Every property follows it, every stage is recorded, and you receive the documentation at sign-off. The last step is the one most contractors skip — it's why the mould doesn't come back.</p>
     </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-icon"></div>
-      <div class="service-title">Bespoke Treatment Plan</div>
-      <div class="service-desc">Costed remediation plan with timeline per property. Satisfies the written summary requirement under Awaab's Law.</div>
-      <div class="service-price">From £150 / included with survey</div>
+    <div class="protocol-open-tag mono">
+      STATUS: <b>OPEN</b><br>
+      METHOD: PUBLISHED<br>
+      AUDIT: PER PROPERTY
     </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <div class="service-icon"></div>
-      <div class="service-title">Remediation & Treatment</div>
-      <div class="service-desc">Full works execution: DPC injection, replastering, mould wash, ventilation installation, external repairs. End-to-end project management.</div>
-      <div class="service-price">From £500 per property</div>
+  </div>
+
+  <div class="steps">
+    <!-- 01 -->
+    <div class="step">
+      <div class="step-index mono">STEP<span class="big">01</span></div>
+      <div>
+        <div class="step-title">Survey &amp; Diagnose</div>
+        <div class="step-desc">A CSRT-qualified surveyor maps every affected area and finds the <em>root cause</em> — condensation, penetrating or rising damp, or a leak. Full moisture readings and photo evidence go into a written diagnostic report that satisfies the Awaab's Law 10-day investigation.</div>
+      </div>
+      <div class="step-spec mono"><span class="k">OUTPUT:</span> <span class="v">Written survey + moisture map + photo log</span></div>
     </div>
-    <div class="service-card">
-      <div class="service-num">04</div>
-      <div class="service-icon"></div>
-      <div class="service-title">Follow-Up & Sign-Off</div>
-      <div class="service-desc">Return visit to verify resolution. Full compliance documentation for your records. Final sign-off report ready for Housing Ombudsman.</div>
-      <div class="service-price">From £150 per property</div>
+    <!-- 02 -->
+    <div class="step">
+      <div class="step-index mono">STEP<span class="big">02</span></div>
+      <div>
+        <div class="step-title">Contain &amp; Strip</div>
+        <div class="step-desc">We isolate the work area to stop spores spreading through the home, then remove what can't be saved — flaking paint, blown plaster, contaminated wallpaper. The space is protected so the tenant can stay safe throughout.</div>
+      </div>
+      <div class="step-spec mono"><span class="k">CONTROL:</span> <span class="v">Spore containment · safe removal of affected materials</span></div>
     </div>
-    <div class="service-card highlight">
-      <div class="service-num">05</div>
-      <div class="service-icon" style="background:rgba(0,0,0,0.25)"></div>
-      <div class="service-title">Annual Compliance Retainer</div>
-      <div class="service-desc">Ongoing proactive stock surveys, compliance register management, quarterly reports, and priority rapid response. The complete long-term solution.</div>
-      <div class="service-price">From £500/month — based on stock size</div>
+    <!-- 03 -->
+    <div class="step">
+      <div class="step-index mono">STEP<span class="big">03</span></div>
+      <div>
+        <div class="step-title">Kill &amp; Clean</div>
+        <div class="step-desc">We treat every affected surface with an HSE-approved fungicidal wash that destroys mould, mildew and algae at the source and lifts the biofilm they grow from — not just the visible black staining on top.</div>
+      </div>
+      <div class="step-spec mono"><span class="k">PRODUCT:</span> <span class="v">Benzalkonium chloride fungicidal wash · HSE-approved surface biocide</span></div>
     </div>
-    <div class="service-card">
-      <div class="service-num">06</div>
-      <div class="service-icon"></div>
-      <div class="service-title">Full Compliance Package</div>
-      <div class="service-desc">Survey + Treatment + Follow-Up + Register Management as one contract. One partner, one invoice, zero compliance gaps. Best value for housing associations.</div>
-      <div class="service-price">Contact us for volume pricing</div>
+    <!-- 04 -->
+    <div class="step">
+      <div class="step-index mono">STEP<span class="big">04</span></div>
+      <div>
+        <div class="step-title">Repair &amp; Ventilate</div>
+        <div class="step-desc">Killing the mould isn't enough if the cause is still there. We make good — re-plaster, treat the structure, fix the defect — and improve ventilation or insulation so the conditions that grew the mould are gone for good.</div>
+      </div>
+      <div class="step-spec mono"><span class="k">ROOT&nbsp;CAUSE:</span> <span class="v">Make-good · ventilation / extraction · moisture control</span></div>
+    </div>
+    <!-- 05 -->
+    <div class="step final">
+      <div class="step-index mono">STEP<span class="big">05</span></div>
+      <div>
+        <div class="step-title">Protect &amp; Sign-Off</div>
+        <div class="step-desc">We finish with a residual antifungal barrier — an invisible protective treatment that keeps inhibiting growth long after we leave, so the mould can't simply return. Then we verify the work and hand you a complete compliance pack, ready for Housing Ombudsman scrutiny.</div>
+      </div>
+      <div class="step-spec mono"><span class="k">PRODUCT:</span> <span class="v">Residual biocidal barrier — benzalkonium chloride + 2-phenylphenol · inhibits regrowth</span><br><span class="k">OUTPUT:</span> <span class="v">Full sign-off documentation pack</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHEMICAL DISCLOSURE -->
+<section class="chem-section reveal" id="chemicals">
+  <div class="chem-panel">
+    <div class="chem-intro">
+      <div class="section-label">What We Use</div>
+      <h3>The Bottle,<br>On the Label.</h3>
+      <p>Most contractors won't tell you what they spray in your tenants' homes. We will. Our treatment uses professional, HSE-approved biocides — the same active ingredients trusted across the UK trade — applied at the correct strength by trained operatives.</p>
+      <p>They're low-odour, biodegradable, and safe for occupied homes when used as directed. If a tenant or surveyor asks what's been applied, you have the answer in writing.</p>
+      <div class="chem-badge">✓ HSE-approved · safe in occupied homes</div>
+    </div>
+    <div class="chem-list">
+      <div class="chem-item">
+        <div class="stage">Stage 1 · Kill &amp; clean</div>
+        <div class="compound">Benzalkonium Chloride</div>
+        <div class="note">A quaternary-ammonium fungicidal wash. Destroys mould, mildew and algae on contact and breaks down the organic film they grow from.</div>
+      </div>
+      <div class="chem-item">
+        <div class="stage">Stage 2 · Protect &amp; prevent</div>
+        <div class="compound">BAC + 2-Phenylphenol</div>
+        <div class="note">A residual biocidal barrier left on the treated surface. Keeps working after application to inhibit regrowth — the step that stops mould coming back.</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section class="gallery-section reveal" id="gallery">
-  <div class="section-label">Before & After</div>
-  <h2 class="section-title">Real Results.</h2>
-  <p class="section-sub">Every case documented from survey to sign-off. Here's what Zentox-treated properties look like.</p>
-    <div class="gallery-grid">
+<section class="gallery-section reveal" id="results">
+  <div class="section-label">Before &amp; After</div>
+  <h2 class="section-title">Documented Results.</h2>
+  <p class="section-sub">Every case recorded from survey to sign-off. Here's what an Open Source–treated property looks like.</p>
+  <div class="gallery-grid">
     <div class="gallery-item">
       <img src="https://cdn.jsdelivr.net/gh/Zorian/zentox@main/images/image_02.jpeg" alt="Mould in corner before treatment">
       <span class="gallery-tag tag-before">Before</span>
@@ -809,16 +1070,50 @@
   </div>
 </section>
 
-<!-- WHY ZENTOX -->
+<!-- WAYS TO WORK -->
+<section class="ways-section reveal" id="services">
+  <div class="section-label">Ways to Work With Us</div>
+  <h2 class="section-title">One Job, or<br>Your Whole Stock.</h2>
+  <p class="section-sub">Whether it's a single problem property or an ongoing compliance partnership, the protocol — and the documentation — stays the same.</p>
+  <div class="ways-grid">
+    <div class="way-card">
+      <div class="way-num mono">01 / SURVEY</div>
+      <div class="way-title">Survey &amp; Report</div>
+      <div class="way-desc">A CSRT-qualified diagnostic survey with a written report built to Awaab's Law standards. Ideal when you need a property assessed and documented fast.</div>
+      <div class="way-price">From £250 per property</div>
+    </div>
+    <div class="way-card">
+      <div class="way-num mono">02 / REMEDIATE</div>
+      <div class="way-title">Full Remediation</div>
+      <div class="way-desc">The complete five-step protocol end to end — survey, treatment, repair, protective barrier and sign-off — managed by us, evidenced for you.</div>
+      <div class="way-price">From £500 per property</div>
+    </div>
+    <div class="way-card highlight">
+      <div class="way-num mono">03 / RETAIN</div>
+      <div class="way-title">Compliance Retainer</div>
+      <div class="way-desc">Proactive stock surveys, priority 24-hour response, a managed compliance register and quarterly reporting. The long-term answer for housing providers.</div>
+      <div class="way-price">From £500 / month — by stock size</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
 <section class="why-section reveal">
   <div>
-    <div class="section-label">Why Zentox</div>
-    <h2 class="section-title">Built for<br>Social Housing.</h2>
-    <p class="section-sub">We aren't a general contractor. We specialise in the compliance requirements and operational pressures of social landlords — housing associations, local councils, and registered providers.</p>
+    <div class="section-label">Why Open Source</div>
+    <h2 class="section-title">Built for Landlords<br>Who Get Audited.</h2>
+    <p class="section-sub">We aren't a general contractor. We specialise in the compliance pressures of social landlords — housing associations, councils and registered providers — and we make the paperwork as solid as the work.</p>
     <br>
     <a href="#contact" class="btn-primary">Talk to Us</a>
   </div>
   <div class="why-points">
+    <div class="why-point">
+      <span class="why-check">✓</span>
+      <div class="why-text">
+        <strong>Total Transparency</strong>
+        <span>Our method and our materials are published, not hidden. When a tenant or the Ombudsman asks, you already have the answer on record.</span>
+      </div>
+    </div>
     <div class="why-point">
       <span class="why-check">✓</span>
       <div class="why-text">
@@ -829,36 +1124,15 @@
     <div class="why-point">
       <span class="why-check">✓</span>
       <div class="why-text">
-        <strong>CSRT-Qualified Surveyors</strong>
-        <span>Our surveyors hold PCA-recognised qualifications — the standard serious social landlords require before contracting.</span>
+        <strong>Root-Cause, Not Cover-Up</strong>
+        <span>We fix what's causing the mould and apply a residual barrier so it stays gone — not a quick wipe that returns in weeks.</span>
       </div>
     </div>
     <div class="why-point">
       <span class="why-check">✓</span>
       <div class="why-text">
-        <strong>24-Hour Emergency Response</strong>
-        <span>When a tenant reports an emergency hazard, you need same-day action. We mobilise within 24 hours, nationwide.</span>
-      </div>
-    </div>
-    <div class="why-point">
-      <span class="why-check">✓</span>
-      <div class="why-text">
-        <strong>Full Compliance Documentation</strong>
-        <span>Every job produces a complete audit trail — survey report, treatment plan, sign-off — ready for Housing Ombudsman scrutiny.</span>
-      </div>
-    </div>
-    <div class="why-point">
-      <span class="why-check">✓</span>
-      <div class="why-text">
-        <strong>UK-Wide Coverage</strong>
-        <span>Operating across England with a national subcontractor network. One partner for your entire housing stock.</span>
-      </div>
-    </div>
-    <div class="why-point">
-      <span class="why-check">✓</span>
-      <div class="why-text">
-        <strong>Retainer & Volume Contracts</strong>
-        <span>Designed for volume. Our retainer model gives you priority access, proactive surveys, and predictable costs.</span>
+        <strong>Audit-Ready Documentation</strong>
+        <span>Every job produces a complete trail — survey, treatment record, products used, sign-off — ready for Housing Ombudsman scrutiny.</span>
       </div>
     </div>
   </div>
@@ -869,8 +1143,7 @@
   <div class="contact-info">
     <div class="section-label">Get in Touch</div>
     <h2 class="section-title">Ready to Talk<br>Compliance?</h2>
-    <p class="section-sub">Whether you need a single survey or an annual compliance partner for your full housing stock — we'll give you a clear proposal within 24 hours.</p>
-    <br>
+    <p class="section-sub">A single survey or an annual partner for your full stock — we'll come back with a clear proposal within 24 hours.</p>
     <div class="info-item">
       <div class="info-icon">📞</div>
       <div>
@@ -882,7 +1155,7 @@
       <div class="info-icon">✉</div>
       <div>
         <div class="info-label">Email</div>
-        <div class="info-value">hello@zentox.co.uk</div>
+        <div class="info-value">hello@opensourcemm.co.uk</div>
       </div>
     </div>
     <div class="info-item">
@@ -894,52 +1167,72 @@
     </div>
   </div>
   <div>
-    <form class="contact-form" onsubmit="return false;">
+    <form class="contact-form" id="enquiryForm">
       <div class="form-row">
-        <input type="text" placeholder="Your Name" required>
-        <input type="text" placeholder="Organisation">
+        <input type="text" id="f-name" placeholder="Your Name" required>
+        <input type="text" id="f-org" placeholder="Organisation">
       </div>
-      <input type="email" placeholder="Email Address" required>
-      <input type="tel" placeholder="Phone Number">
-      <select>
+      <input type="email" id="f-email" placeholder="Email Address" required>
+      <input type="tel" id="f-phone" placeholder="Phone Number">
+      <select id="f-type">
         <option value="" disabled selected>Type of Enquiry</option>
         <option>Single Property Survey</option>
         <option>Multi-Property Survey</option>
+        <option>Full Remediation</option>
         <option>Emergency Response</option>
         <option>Annual Compliance Retainer</option>
-        <option>Full Compliance Package</option>
         <option>General Enquiry</option>
       </select>
-      <textarea placeholder="Tell us about your property stock and requirements..."></textarea>
-      <button type="submit" class="btn-primary" style="cursor:pointer;border:none;font-size:1rem;">Send Enquiry →</button>
+      <textarea id="f-msg" placeholder="Tell us about the property / stock and what you need..."></textarea>
+      <button type="submit" class="btn-primary">Send Enquiry →</button>
+      <div class="form-note">Opens in your email app. Prefer a tracked inbox form? We can switch this on.</div>
     </form>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="logo" style="font-size:1.2rem;">Zen<span style="color:var(--amber)">tox</span></div>
-  <div>Damp & Mould Compliance Specialists — UK-Wide</div>
-  <div>© 2026 Zentox. All rights reserved.</div>
+  <div class="foot-brand">○ OPEN <b>SOURCE</b> — Mould Management</div>
+  <div>Damp &amp; Mould Compliance · UK-Wide</div>
+  <div>© 2026 Open Source. All rights reserved.</div>
 </footer>
 
 <script>
   // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add('visible'); }
     });
   }, { threshold: 0.1 });
-  reveals.forEach(r => observer.observe(r));
+  reveals.forEach(function (r) { observer.observe(r); });
 
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
+  // Contact form -> mailto fallback (no backend required)
+  var form = document.getElementById('enquiryForm');
+  if (form) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+      var name = (document.getElementById('f-name').value || '').trim();
+      var org = (document.getElementById('f-org').value || '').trim();
+      var email = (document.getElementById('f-email').value || '').trim();
+      var phone = (document.getElementById('f-phone').value || '').trim();
+      var type = (document.getElementById('f-type').value || '').trim();
+      var msg = (document.getElementById('f-msg').value || '').trim();
+      var subject = 'Enquiry' + (type ? ' — ' + type : '') + (org ? ' (' + org + ')' : '');
+      var body = [
+        'Name: ' + name,
+        'Organisation: ' + org,
+        'Email: ' + email,
+        'Phone: ' + phone,
+        'Enquiry type: ' + type,
+        '',
+        msg
+      ].join('\n');
+      window.location.href = 'mailto:hello@opensourcemm.co.uk'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
     });
-  });
+  }
 </script>
 </body>
 </html>
